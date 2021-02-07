@@ -16,8 +16,8 @@ class CreateStoksTable extends Migration
         Schema::create('stoks', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->unsignedInteger('quantity');
-            $table->unsignedInteger('price');
+            $table->unsignedInteger('quantity'); // 個数のデータを扱うためunsignedInteger型
+            $table->unsignedInteger('price'); // 金額のデータを扱うためunsignedInteger型
             $table->string('role')->default('発注確認');
             $table->dateTime('created_at')->nullable(); // 2038年問題があるためdateTimeを使用
             $table->dateTime('updated_at')->nullable(); // 2038年問題があるためdateTimeを使用
