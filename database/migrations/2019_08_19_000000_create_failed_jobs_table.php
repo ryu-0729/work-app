@@ -19,7 +19,8 @@ class CreateFailedJobsTable extends Migration
             $table->text('queue');
             $table->longText('payload');
             $table->longText('exception');
-            $table->timestamp('failed_at')->useCurrent();
+            $table->dateTime('failed_at')->default(DB::raw('CURRENT_TIMESTAMP')); // 2038年問題があるためdateTimeを使用
+            //$table->timestamp('failed_at')->useCurrent();
         });
     }
 
