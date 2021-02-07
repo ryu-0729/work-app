@@ -19,7 +19,9 @@ class CreateStoksTable extends Migration
             $table->unsignedInteger('quantity');
             $table->unsignedInteger('price');
             $table->string('role')->default('発注確認');
-            $table->timestamps();
+            $table->dateTime('created_at')->nullable(); // 2038年問題があるためdateTimeを使用
+            $table->dateTime('updated_at')->nullable(); // 2038年問題があるためdateTimeを使用
+            // $table->timestamps();
         });
     }
 
