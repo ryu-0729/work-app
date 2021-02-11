@@ -12,6 +12,7 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
         // ユーザーのダミーデータを50件作成
-        factory(App\User::class, 50)->create();
+        $users = factory(App\User::class, 50)
+            ->create();
     }
 }
