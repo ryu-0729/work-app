@@ -11,7 +11,7 @@ class RolesTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('roles')->insert([
+        /* DB::table('roles')->insert([
             [
                 'id' => 1,
                 'name' => '在庫発注管理者'
@@ -24,6 +24,15 @@ class RolesTableSeeder extends Seeder
                 'id' => 3,
                 'name' => '在庫受注社'
             ]
+        ]); */
+        $role = factory(App\Role::class)->create();
+
+        $role = factory(App\Role::class)->create([
+            'name' => '在庫発注管理者'
+        ]);
+
+        $role = factory(App\Role::class)->create([
+            'name' => '在庫受注社'
         ]);
     }
 }
